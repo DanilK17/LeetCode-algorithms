@@ -1,22 +1,25 @@
+from collections import deque
 class MinStack:
 
     def __init__(self):
-        pass
-
+        self.stack = deque()
+        self.minStack = deque()
+        
     def push(self, val: int) -> None:
-        pass
-
+        self.stack.append(val)
+        self.minStack.append(min(val, self.minStack[-1] if self.minStack else val))
+               
     def pop(self) -> None:
-        pass
+        self.stack.pop()
+        self.minStack.pop()
 
     def top(self) -> int:
-        pass
+        return self.stack[-1]
 
     def getMin(self) -> int:
-        pass
+        return self.minStack[-1]
 
 
-# Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
 # obj.push(val)
 # obj.pop()
