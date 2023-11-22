@@ -2,9 +2,8 @@
 def calculate(s):
     stack = []
     operand = 0
-    result = 0  # For the final result
-    sign = 1  # 1 represents positive sign, -1 represents negative sign
-
+    result = 0 
+    sign = 1  
     for char in s:
         if char.isdigit():
             operand = operand * 10 + int(char)
