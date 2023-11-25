@@ -8,6 +8,7 @@ class Node:
 
 
 def copyRandomList(head):
+    '''
     if not(head):
         return
     cur = head
@@ -36,3 +37,18 @@ def copyRandomList(head):
             new_current = new_current.next
 
     return new_head
+    '''
+    visited = {}
+    def dfs(node):
+        if node in visited:
+            return visited[node]
+        if not node:
+            return None
+        copy = Node(node.val)
+        visited[node] = copy
+        copy.next = dfs(node.next)
+        copy.random = dfs(node.random)
+
+        return copy
+        
+    return dfs(head)
