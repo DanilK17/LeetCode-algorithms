@@ -2,4 +2,4 @@
 
 ---
 
-My solutions to problems with leetcode
+My solutions to problems from leetcode
